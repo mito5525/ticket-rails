@@ -20,6 +20,13 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 ja:
+  activerecord:
+    attributes:
+        ticket:
+          title: タイトル
+          descripution: 詳細
+          priority: 重要度
+          status: ステータス
   enums:
     ticket:
       priority:
