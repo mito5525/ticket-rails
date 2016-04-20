@@ -1,0 +1,7 @@
+---
+- hosts: ticket-rails
+  become: true
+  roles:
+    - 5003.basic-settings-ja
+    - 5003.mariadb
+    - ruby
