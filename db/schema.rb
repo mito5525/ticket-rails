@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160420062243) do
+ActiveRecord::Schema.define(version: 20160420100423) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "body",       limit: 65535
+    t.integer  "ticket_id",  limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "comments", ["ticket_id"], name: "fk_rails_e013b60ecb", using: :btree
 
   create_table "tickets", force: :cascade do |t|
     t.string   "title",        limit: 255
@@ -22,4 +31,5 @@ ActiveRecord::Schema.define(version: 20160420062243) do
     t.datetime "updated_at",                 null: false
   end
 
+  add_foreign_key "comments", "tickets"
 end
