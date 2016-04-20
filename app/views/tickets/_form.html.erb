@@ -21,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :priority %><br>
-    <%= f.number_field :priority %>
+    <%= f.select :priority, Ticket.priorities_i18n.invert %>
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= f.select :status, Ticket.statuses_i18n.invert %>
   </div>
   <div class="actions">
     <%= f.submit %>
